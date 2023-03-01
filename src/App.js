@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import CheckoutModal from "./components/CheckoutModal";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+export default function App() {
+    return (
+        <div
+            className="App"
+            style={{
+                background: '#F8F6F7',
+                color: '#414042',
+                display: 'block',
+                marginBottom: 0,
+                width: '100vw',
+                minHeight: '1500px'
+        }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <CheckoutModal />
+        </div>
+    );
 }
-
-export default App;
