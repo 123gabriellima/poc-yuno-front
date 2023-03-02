@@ -24,7 +24,8 @@ yarn build
 - Via postman: Após o cartão de credito ser tokenizado, o frontend vai retornar os dados necessarios para serem enviados ao monopoly e completar um pagamento utilizando a Yuno.
 Exemplo do modal a baixo:
 ![image](https://user-images.githubusercontent.com/119955374/222432411-7ae0f751-0517-4956-83e1-7a5a6449d35d.png)
-obs: Os dados do pagamento devem ir no metadata, dentro de uma propriedade `checkoutSession`
+
+### obs: Os dados do pagamento devem ir no metadata, dentro de uma propriedade `checkoutSession`
 Exemplo:
 
 ```json
