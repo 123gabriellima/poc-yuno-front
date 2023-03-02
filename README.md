@@ -1,8 +1,11 @@
 # Poc yuno front
 
-# documentações uteis para o projeto
+# Documentações uteis para o projeto
 
 [Documentação yuno](https://docs.y.uno/docs/web-sdk-integration) 
+
+## Fluxo de transação yuno
+![image](https://user-images.githubusercontent.com/119955374/222475992-11ca084a-836b-499f-b28f-6197046186f9.png)
 
 # dependencias necessarias
 ```
