@@ -2,8 +2,9 @@
 
 # Documentações uteis para o projeto
 
-[Documentação yuno](https://docs.y.uno/docs/web-sdk-integration) 
+[Documentação yuno](https://docs.y.uno/docs/web-sdk-integration)
 
+### Para o frontend funcionar perfeitamente, executar esse codigo desse [Pull Request](https://github.com/Plataforma13/monopoly/pull/108) localmente ou em ambiente de teste
 ## Fluxo de transação yuno
 ![image](https://user-images.githubusercontent.com/119955374/222475992-11ca084a-836b-499f-b28f-6197046186f9.png)
 
