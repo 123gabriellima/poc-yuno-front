@@ -1,5 +1,9 @@
 # Poc yuno front
 
+# documentações uteis para o projeto
+
+[Documentação yuno](https://docs.y.uno/docs/web-sdk-integration) 
+
 # dependencias necessarias
 ```
 node: v16.19.0
