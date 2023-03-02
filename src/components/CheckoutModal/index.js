@@ -10,6 +10,7 @@ import CheckoutSessionDataModal from "./CheckoutSessionDataModal";
 export default function CheckoutModal() {
     const [checkoutSessionHasBeenCreated, setCheckoutSessionHasBeenCreated] = useState(false)
     const [checkoutSession, setCheckoutSession] = useState(null);
+    const [amountIsPopuled, setAmountIsPopuled] = useState(false);
     const [checkoutSessionData, setCheckoutSessionData] = useObjectState({
         oneTimeToken: "",
         checkoutSession: "",
@@ -36,8 +37,9 @@ export default function CheckoutModal() {
         shouldShowCheckoutSessionModal: false
     }, "customerModal");
 
-    if(!customerData.amount) {
+    if(!amountIsPopuled) {
         setCustomerData('amount', prompt('Digite um valor'))
+        setAmountIsPopuled(true);
     }
     if (isCustomerFilled() && customerData.shouldShowYunoModal && !checkoutSessionHasBeenCreated) {
         (async () => {

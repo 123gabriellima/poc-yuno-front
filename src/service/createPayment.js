@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export default async function createPayment(input) {
-    const { oneTimeToken, checkoutSession } = input;
     const headers = {
         'Content-Type': 'application/json',
         Authorization: 'Bearer d4bf42ce-7bf0-4f1f-8699-8c477f8b4a45'
@@ -92,9 +91,9 @@ export default async function createPayment(input) {
                 ]
             },
             checkoutSession: {
-                oneTimeToken,
-                checkoutSession: checkoutSession.checkoutSession.checkout_session,
-                customerId: checkoutSession.customer.id
+                oneTimeToken: input.oneTimeToken,
+                checkoutSession: input.checkoutSession,
+                customerId: input.customerId
             }
         }
     };

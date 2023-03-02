@@ -50,7 +50,6 @@ export default async function initCheckoutLite(checkoutSession, customerData, se
     },
     async yunoCreatePayment(oneTimeToken) {
       try {
-        // console.log({oneTimeToken, checkoutSession, customerData, checkoutSessionToken: checkoutSession.checkoutSession.checkout_session})
         if(customerData.requestType === 'Via postman') {
           setCheckoutSessionData("oneTimeToken", oneTimeToken);
           setCheckoutSessionData("checkoutSession", checkoutSession.checkoutSession.checkout_session);
@@ -58,15 +57,21 @@ export default async function initCheckoutLite(checkoutSession, customerData, se
           setCustomerData("shouldShowYunoModal", false);
           setCustomerData("shouldShowCheckoutSessionModal", true);
           return;
-
         }
-        await createPayment({ oneTimeToken, checkoutSession, customerData })
-      } catch (e) {
+        await createPayment({
+          oneTimeToken,
+          checkoutSession: checkoutSession.checkoutSession.checkout_session,
+          customerId: checkoutSession.customer.id, customerData
+        })
+      } catch (exception) {
+        console.log({exception})
         alert("ocorreu um erro ao executar o pagamento")
       }
       setCustomerData("shouldShowYunoModal", false);
 
       // yuno.continuePayment()
+      // esse cara faz mostrar uma mensagem de sucesso.
+      // Comentei pois creio que essa mensagem sera feita do lado da 123milhas e não da yuno
     },
     /**
      * @param {'READY_TO_PAY' | 'CREATED' | 'PAYED' | 'REJECTED' | 'CANCELLED' | 'ERROR' | 'DECLINED' | 'PENDING' | 'EXPIRED' | 'VERIFIED' | 'REFUNDED'} data
